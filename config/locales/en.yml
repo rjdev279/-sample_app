@@ -1,0 +1,8 @@
+en:
+  resource:
+    created: "%{resource} is created successfully"
+    updated: "%{resource} is updated successfully"
+    destroyed: "%{resource} is destroyed successfully"
+    deleted_for: "%{resource} for %{for} is successfully destroyed."
+    deleted_error: "%{resource} cannot be destroyed."
+    not_found: "%{resource} for the %{id} is not found."

@@ -8,6 +8,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'puma', '~> 5.0'
   gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :test do

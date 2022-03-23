@@ -5,10 +5,25 @@ class InvoicesController < ApplicationController
     @invoices = Invoice.all
   end
 
+  def new
+    @invoice = Invoice.new
+  end
+
+  def create
+    @invoice = Invoice.new(invoice_params)
+
+    if @invoice.save
+      redirect_to invoices_path, notice: I18n.t('resource.created', resource: 'Invoice')
+    else
+      flash[:error] = @invoice.errors.full_messages.join('</br>')
+      render 'new'
+    end
+  end
+
   def destroy
     @invoice.destroy!
 
-    redirect_to invoices_path, notice: "Invoice for #{@invoice.client_name} successfully destroyed."
+    redirect_to invoices_path, notice: I18n.t('resource.deleted_for', resource: 'Invoice', for: @invoice.client_name)
   end
 
   def xhr_change_client_name
@@ -28,5 +43,9 @@ class InvoicesController < ApplicationController
 
   def find_invoice
     @invoice = Invoice.find params[:id]
+  end
+
+  def invoice_params
+    params.require(:invoice).permit(:client_name, :amount, :tax)
   end
 end

@@ -1,6 +1,13 @@
 $red: #f74545;
 $red-hover: #fa5a5a;
 $teal: #0ec0cb;
+$white: #fff;
+$primary: #007bff;
+$primary-hover: #0069d9;
+$secondary: #6c757d;
+$secondary-hover: #5a6268;
+$success: #28a745;
+$success-hover: #218838;
 
 @mixin xs {
   @media (max-width: 369px) {
@@ -113,3 +120,4 @@ a {
 @import 'application/modal';
 @import 'application/controls';
 @import 'application/invoices';
+@import 'application/purchase_orders';

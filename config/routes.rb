@@ -5,7 +5,9 @@ Rails.application.routes.draw do
       get :xhr_change_client_name
       patch :xhr_change_client_name
     end
+    resources :purchase_orders, except: :index
   end
 
+  get '/purchase_orders', to: 'purchase_orders#index'
   root to: 'invoices#index'
 end

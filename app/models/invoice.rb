@@ -1,4 +1,6 @@
 class Invoice < ApplicationRecord
+  has_many :purchase_orders, dependent: :destroy
+
   validates :client_name, presence: true, uniqueness: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
 

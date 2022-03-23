@@ -5,6 +5,7 @@
   <td class="invoices-table__item-td"><%= number_to_currency invoice.total %></td>
   <td class="invoices-table__item-td invoices-table__item-td--actions">
     <%= link_to '', xhr_change_client_name_invoice_path(invoice), class: 'invoice-action invoice-action--edit-name', rel: 'modal:ajax-open', title: 'Change name' %>
+    <%= link_to '', new_invoice_purchase_order_path(invoice_id: invoice.id), class: 'invoice-action invoice-action--create-purchase-order' %>
     <%= link_to '', invoice_path(invoice), method: :delete, class: 'invoice-action invoice-action--delete', title: 'Delete invoice' %>
   </td>
 </tr>
