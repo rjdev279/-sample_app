@@ -1,0 +1,28 @@
+<table class="purchase-orders-table">
+  <thead>
+    <tr>
+      <th class="purchase-orders-table__header purchase-orders-table__header--sortable">
+        Client Name
+      </th>
+      <th class="purchase-orders-table__header purchase-orders-table__header--sortable">
+        Amount
+      </th>
+      <th class="purchase-orders-table__header purchase-orders-table__header--sortable">
+        Tax
+      </th>
+      <th class="purchase-orders-table__header purchase-orders-table__header--sortable">
+        Total
+      </th>
+      <th class="purchase-orders-table__header purchase-orders-table__header--sortable">
+        Vendor
+      </th>
+      <th class="purchase-orders-table__header purchase-orders-table__header--sortable">
+        Status
+      </th>
+      <th class="purchase-orders-table__header"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @purchase_orders  %>
+  </tbody>
+</table>
